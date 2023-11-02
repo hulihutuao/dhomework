@@ -1,2 +1,0 @@
-#任务一 csv格式数据的读写 
-import pandas as pd
