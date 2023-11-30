@@ -102,18 +102,18 @@ def 制作交叉表(数据表, 自变量, 因变量):
    import pandas as pd
    from scipy import stats
 
-   def 单变量参数估计(file_path,confidence_level):
+   def 计算单变量均值的置信水平(数据表，变量名，置信水平=0.95):
 #打开数据文件
-    file_path = R""
+    file_path = 数据表路径及文件名
     df_movies = pd.read_csv(file_path)
 #计算均值和标准误差
-mean =df_movies['average'].mean()
-std_error =stats.sem(df_movies['average'])
+mean =df['average'].mean()
+std_error =stats.sem(df['average'])
 #设定置信水平
 confidence_level = 0.95
 #设定自由度
 自由度 = len(df_movies['average'])
-#计算置信区间
+#计算置信区间(数据表，变量名，置信水平)
 confidenc_interval = stats.t.interval(confidence_leval,自由度,loc=mean,scale=std_error)
 #输出结果
 print(F"均值：{mean: .2f}")
